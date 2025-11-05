@@ -1,0 +1,81 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.button {
+  @include mono-text;
+  border: 1px solid $stone-grey-300;
+  background: $stone-grey-50;
+  color: $text-primary;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 2px;
+  font-weight: 400;
+  
+  &:hover {
+    border-color: $stone-grey-400;
+    background: $stone-grey-100;
+  }
+  
+  &:active {
+    transform: translateY(1px);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    
+    &:hover {
+      border-color: $stone-grey-300;
+      background: $stone-grey-50;
+    }
+  }
+}
+
+.primary {
+  background: $stone-grey-800;
+  color: $stone-grey-50;
+  border-color: $stone-grey-800;
+  
+  &:hover {
+    background: $stone-grey-700;
+    border-color: $stone-grey-700;
+  }
+}
+
+.secondary {
+  background: $stone-grey-100;
+  color: $text-primary;
+  border-color: $stone-grey-300;
+  
+  &:hover {
+    background: $stone-grey-200;
+    border-color: $stone-grey-400;
+  }
+}
+
+.ghost {
+  background: transparent;
+  color: $text-secondary;
+  border-color: transparent;
+  
+  &:hover {
+    background: $stone-grey-100;
+    color: $text-primary;
+    border-color: $stone-grey-200;
+  }
+}
+
+.sm {
+  padding: $spacing-xs $spacing-sm;
+  font-size: 0.75rem;
+}
+
+.md {
+  padding: $spacing-sm $spacing-md;
+  font-size: 0.875rem;
+}
+
+.lg {
+  padding: $spacing-md $spacing-lg;
+  font-size: 1rem;
+}

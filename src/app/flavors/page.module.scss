@@ -1,0 +1,579 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.flavorsPage {
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: $spacing-2xl;
+  
+  @include respond-to($breakpoint-mobile) {
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.title {
+  @include mono-text(2.5rem);
+  color: $text-primary;
+  margin: 0 0 $spacing-lg 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  
+  @include respond-to($breakpoint-mobile) {
+    @include mono-text(2rem);
+    margin-bottom: $spacing-md;
+  }
+}
+
+.subtitle {
+  @include mono-text(1.125rem);
+  color: $text-secondary;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @include respond-to($breakpoint-mobile) {
+    @include mono-text(1rem);
+  }
+}
+
+.flavorWheel {
+  margin-bottom: $spacing-2xl;
+  
+  @include respond-to($breakpoint-mobile) {
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.resultsSection {
+  margin-bottom: $spacing-2xl;
+  
+  @include respond-to($breakpoint-mobile) {
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.resultsHeader {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+  padding: $spacing-xl;
+  background: white;
+  border: 1px solid $stone-grey-200;
+  border-radius: 8px;
+  
+  @include respond-to($breakpoint-mobile) {
+    margin-bottom: $spacing-lg;
+    padding: $spacing-lg;
+  }
+}
+
+.resultsTitle {
+  @include mono-text(1.75rem);
+  color: $text-primary;
+  margin: 0 0 $spacing-sm 0;
+  font-weight: 600;
+  
+  @include respond-to($breakpoint-mobile) {
+    @include mono-text(1.5rem);
+  }
+}
+
+.resultsSubtitle {
+  @include mono-text(1rem);
+  color: $text-secondary;
+  margin: 0;
+  
+  @include respond-to($breakpoint-mobile) {
+    @include mono-text(0.875rem);
+  }
+}
+
+.coffeeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $spacing-lg;
+  
+  @include respond-to($breakpoint-mobile) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: $spacing-md;
+  }
+}
+
+.noResults {
+  text-align: center;
+  padding: $spacing-2xl;
+  background: white;
+  border: 1px solid $stone-grey-200;
+  border-radius: 8px;
+  
+  h3 {
+    @include mono-text(1.25rem);
+    color: $text-primary;
+    margin: 0 0 $spacing-md 0;
+    font-weight: 600;
+  }
+  
+  p {
+    @include mono-text(1rem);
+    color: $text-secondary;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  @include respond-to($breakpoint-mobile) {
+    padding: $spacing-xl;
+    
+    h3 {
+      @include mono-text(1.125rem);
+      margin-bottom: $spacing-sm;
+    }
+    
+    p {
+      @include mono-text(0.875rem);
+    }
+  }
+}
+
+.aboutSection {
+  background: white;
+  border: 1px solid $stone-grey-200;
+  border-radius: 8px;
+  padding: $spacing-2xl;
+  
+  @include respond-to($breakpoint-mobile) {
+    padding: $spacing-xl;
+  }
+}
+
+.aboutTitle {
+  @include mono-text(1.75rem);
+  color: $text-primary;
+  margin: 0 0 $spacing-xl 0;
+  font-weight: 600;
+  text-align: center;
+  
+  @include respond-to($breakpoint-mobile) {
+    @include mono-text(1.5rem);
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.aboutContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-2xl;
+  
+  @include respond-to($breakpoint-mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+  }
+}
+
+.aboutText {
+  p {
+    @include mono-text(1rem);
+    color: $text-primary;
+    line-height: 1.7;
+    margin: 0 0 $spacing-lg 0;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    @include respond-to($breakpoint-mobile) {
+      @include mono-text(0.875rem);
+      margin-bottom: $spacing-md;
+    }
+  }
+}
+
+.flavorFactors {
+  h3 {
+    @include mono-text(1.25rem);
+    color: $text-primary;
+    margin: 0 0 $spacing-lg 0;
+    font-weight: 600;
+    
+    @include respond-to($breakpoint-mobile) {
+      @include mono-text(1.125rem);
+      margin-bottom: $spacing-md;
+    }
+  }
+}
+
+.factorGrid {
+  display: grid;
+  gap: $spacing-lg;
+  
+  @include respond-to($breakpoint-mobile) {
+    gap: $spacing-md;
+  }
+}
+
+.factor {
+  background: $stone-grey-50;
+  border: 1px solid $stone-grey-100;
+  border-radius: 4px;
+  padding: $spacing-lg;
+  
+  h4 {
+    @include mono-text(1rem);
+    color: $text-primary;
+    margin: 0 0 $spacing-sm 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    
+    @include respond-to($breakpoint-mobile) {
+      @include mono-text(0.875rem);
+    }
+  }
+  
+  p {
+    @include mono-text(0.875rem);
+    color: $text-secondary;
+    line-height: 1.5;
+    margin: 0;
+    
+    @include respond-to($breakpoint-mobile) {
+      @include mono-text(0.8125rem);
+    }
+  }
+  
+  @include respond-to($breakpoint-mobile) {
+    padding: $spacing-md;
+  }
+}
+
+// Animation for smooth transitions
+.resultsSection {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Focus states for accessibility
+.coffeeGrid > * {
+  transition: transform 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+  
+  &:focus-within {
+    transform: translateY(-2px);
+    outline: 2px solid $text-primary;
+    outline-offset: 4px;
+  }
+}.re
+sultsSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-2xl;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  margin-bottom: $spacing-2xl;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.1);
+  
+  @include respond-to($breakpoint-mobile) {
+    padding: $spacing-xl;
+    margin: $spacing-lg;
+  }
+}
+
+.resultsHeader {
+  text-align: center;
+  margin-bottom: $spacing-2xl;
+}
+
+.resultsTitle {
+  @include mono-text(2rem);
+  color: $text-primary;
+  margin: 0 0 $spacing-md 0;
+  font-weight: 700;
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  @include respond-to($breakpoint-mobile) {
+    @include mono-text(1.5rem);
+  }
+}
+
+.resultsSubtitle {
+  @include mono-text(1.125rem);
+  color: $text-secondary;
+  margin: 0;
+  line-height: 1.6;
+  
+  @include respond-to($breakpoint-mobile) {
+    @include mono-text(1rem);
+  }
+}
+
+.coffeeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $spacing-xl;
+  
+  @include respond-to($breakpoint-mobile) {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: $spacing-lg;
+  }
+}
+
+.insightsSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-2xl;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  margin-bottom: $spacing-2xl;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.1);
+  
+  @include respond-to($breakpoint-mobile) {
+    padding: $spacing-xl;
+    margin: $spacing-lg;
+  }
+}
+
+.insightsTitle {
+  @include mono-text(2rem);
+  color: $text-primary;
+  margin: 0 0 $spacing-2xl 0;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  @include respond-to($breakpoint-mobile) {
+    @include mono-text(1.5rem);
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.insightsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-xl;
+  
+  @include respond-to($breakpoint-mobile) {
+    gap: $spacing-lg;
+  }
+}
+
+.insightCard {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: $spacing-xl;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
+  
+  h3 {
+    @include mono-text(1.25rem);
+    color: $text-primary;
+    margin: $spacing-md 0;
+    font-weight: 600;
+  }
+  
+  p {
+    @include mono-text(0.9375rem);
+    color: $text-secondary;
+    line-height: 1.6;
+    margin: 0 0 $spacing-lg 0;
+  }
+  
+  @include respond-to($breakpoint-mobile) {
+    padding: $spacing-lg;
+  }
+}
+
+.insightIcon {
+  font-size: 3rem;
+  margin-bottom: $spacing-sm;
+  display: block;
+}
+
+.insightStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-md;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 12px;
+  color: white;
+}
+
+.statNumber {
+  @include mono-text(2rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.statLabel {
+  @include mono-text(0.75rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.tipsSection {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $spacing-2xl;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  margin-bottom: $spacing-2xl;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.1);
+  
+  @include respond-to($breakpoint-mobile) {
+    padding: $spacing-xl;
+    margin: $spacing-lg;
+  }
+}
+
+.tipsTitle {
+  @include mono-text(2rem);
+  color: $text-primary;
+  margin: 0 0 $spacing-2xl 0;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  @include respond-to($breakpoint-mobile) {
+    @include mono-text(1.5rem);
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.tipsList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.tip {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-lg;
+  padding: $spacing-lg;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  @include respond-to($breakpoint-mobile) {
+    padding: $spacing-md;
+    gap: $spacing-md;
+  }
+}
+
+.tipNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.tipContent {
+  flex: 1;
+  
+  h4 {
+    @include mono-text(1.125rem);
+    color: $text-primary;
+    margin: 0 0 $spacing-xs 0;
+    font-weight: 600;
+  }
+  
+  p {
+    @include mono-text(0.9375rem);
+    color: $text-secondary;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+// Animation for sections
+.resultsSection,
+.insightsSection,
+.tipsSection {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive adjustments
+@include respond-to($breakpoint-mobile) {
+  .flavorsPage {
+    .insightsGrid {
+      grid-template-columns: 1fr;
+    }
+    
+    .tip {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .tipNumber {
+      align-self: center;
+    }
+  }
+}

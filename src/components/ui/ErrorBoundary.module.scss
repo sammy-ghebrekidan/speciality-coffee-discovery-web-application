@@ -1,0 +1,45 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.errorBoundary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: $spacing-xl;
+}
+
+.content {
+  text-align: center;
+  max-width: 400px;
+}
+
+.title {
+  @include mono-text(1.25rem);
+  color: $text-primary;
+  font-weight: 500;
+  margin-bottom: $spacing-md;
+}
+
+.message {
+  @include mono-text(0.875rem);
+  color: $text-secondary;
+  margin-bottom: $spacing-lg;
+  line-height: 1.6;
+}
+
+.retryButton {
+  @include mono-text;
+  background: $stone-grey-800;
+  color: $stone-grey-50;
+  border: 1px solid $stone-grey-800;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: $stone-grey-700;
+    border-color: $stone-grey-700;
+  }
+}

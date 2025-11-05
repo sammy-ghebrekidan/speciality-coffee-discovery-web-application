@@ -1,0 +1,44 @@
+// variables.scss - Stone grey minimalist palette inspired by Japanese cafe culture
+$stone-grey-50: #FAFAFA;
+$stone-grey-100: #F5F5F5;
+$stone-grey-200: #EEEEEE;
+$stone-grey-300: #E0E0E0;
+$stone-grey-400: #BDBDBD;
+$stone-grey-500: #9E9E9E;
+$stone-grey-600: #757575;
+$stone-grey-700: #616161;
+$stone-grey-800: #424242;
+$stone-grey-900: #212121;
+
+// Accent colors for subtle highlights
+$warm-accent: #D7CCC8; // Warm beige
+$cool-accent: #B0BEC5; // Cool blue-grey
+$text-primary: $stone-grey-900;
+$text-secondary: $stone-grey-600;
+$text-muted: $stone-grey-500;
+
+// Continent-based color palette (Emerald Blush Sunset inspired)
+$continent-south-america: #E06C4A; // Warm coral/terracotta
+$continent-central-america: #DAC663; // Golden yellow
+$continent-africa: #D6CFC9; // Warm stone beige
+$continent-asia-pacific: #9ABBC0; // Soft blue-green
+$continent-caribbean: #E7B6AF; // Soft coral pink
+$continent-other: #6E7879; // Cool grey-green
+$continent-middle-east: #C4A484; // Warm sand
+$continent-oceania: #8BB5B8; // Ocean blue-green
+$continent-north-america: #B8A082; // Desert tan
+
+// Typography - Mono-inspired font stack
+$font-primary: 'JetBrains Mono', 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+$font-secondary: 'Inter', 'Helvetica Neue', sans-serif;
+
+// Spacing system
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
+
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;

@@ -1,0 +1,89 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.navigation {
+  position: relative;
+}
+
+.mobileToggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-sm;
+  
+  span {
+    width: 20px;
+    height: 2px;
+    background: $text-secondary;
+    transition: all 0.2s ease;
+  }
+  
+  @include respond-to($breakpoint-mobile) {
+    display: flex;
+  }
+}
+
+.tabs {
+  display: flex;
+  gap: $spacing-xs;
+  
+  @include respond-to($breakpoint-mobile) {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: $stone-grey-50;
+    border: 1px solid $stone-grey-200;
+    border-radius: 2px;
+    flex-direction: column;
+    gap: 0;
+    min-width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    z-index: 100;
+    
+    &.mobileOpen {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}
+
+.tab {
+  @include mono-text(0.875rem);
+  padding: $spacing-sm $spacing-md;
+  color: $text-secondary;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  
+  &:hover {
+    color: $text-primary;
+  }
+  
+  &.active {
+    color: $text-primary;
+    border-bottom-color: $stone-grey-800;
+  }
+  
+  @include respond-to($breakpoint-mobile) {
+    border-bottom: none;
+    border-left: 2px solid transparent;
+    
+    &.active {
+      border-bottom: none;
+      border-left-color: $stone-grey-800;
+      background: $stone-grey-100;
+    }
+    
+    &:hover {
+      background: $stone-grey-100;
+    }
+  }
+}

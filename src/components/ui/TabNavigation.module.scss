@@ -1,0 +1,78 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.tabNavigation {
+  width: 100%;
+  margin-bottom: $spacing-xl;
+}
+
+.tabList {
+  display: flex;
+  border-bottom: 1px solid $stone-grey-200;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.tab {
+  @include mono-text(0.875rem);
+  background: none;
+  border: none;
+  padding: $spacing-md $spacing-lg;
+  color: $text-secondary;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  position: relative;
+  border-bottom: 2px solid transparent;
+  
+  &:hover:not(.disabled):not(.active) {
+    color: $text-primary;
+    background: rgba($stone-grey-100, 0.5);
+  }
+  
+  &.active {
+    color: $text-primary;
+    border-bottom-color: $stone-grey-800;
+    font-weight: 500;
+  }
+  
+  &.disabled {
+    color: $text-muted;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.tabLabel {
+  // Base styling inherited from parent
+}
+
+.tabCount {
+  @include mono-text(0.75rem);
+  color: $text-muted;
+  font-weight: normal;
+  
+  .tab.active & {
+    color: $text-secondary;
+  }
+}
+
+// Responsive adjustments
+@include respond-to($breakpoint-mobile) {
+  .tab {
+    padding: $spacing-sm $spacing-md;
+    @include mono-text(0.75rem);
+  }
+  
+  .tabCount {
+    @include mono-text(0.625rem);
+  }
+}

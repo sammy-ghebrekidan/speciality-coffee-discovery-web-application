@@ -1,0 +1,74 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: $font-secondary;
+  background-color: $stone-grey-50;
+  color: $text-primary;
+  line-height: 1.6;
+}
+
+body {
+  font-size: 0.875rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: $text-secondary;
+  }
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all 0.2s ease;
+}
+
+// Utility classes
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+  position: relative;
+  overflow: visible; // Ensure sticky elements work properly
+  
+  @include respond-to($breakpoint-mobile) {
+    padding: 0 $spacing-md;
+  }
+}
+
+.mono-text {
+  @include mono-text;
+}
+
+.text-primary {
+  color: $text-primary;
+}
+
+.text-secondary {
+  color: $text-secondary;
+}
+
+.text-muted {
+  color: $text-muted;
+}

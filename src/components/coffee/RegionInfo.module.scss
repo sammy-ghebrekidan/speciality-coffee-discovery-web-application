@@ -1,0 +1,221 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.regionInfo {
+  background: $stone-grey-50;
+  border: 1px solid $stone-grey-200;
+  border-radius: 4px;
+  padding: $spacing-xl;
+  margin-bottom: $spacing-xl;
+  
+  @include respond-to($breakpoint-mobile) {
+    padding: $spacing-lg;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.header {
+  margin-bottom: $spacing-lg;
+  padding-bottom: $spacing-md;
+  border-bottom: 1px solid $stone-grey-200;
+}
+
+.title {
+  @include mono-text(1.5rem);
+  color: $text-primary;
+  margin: 0 0 $spacing-xs 0;
+  font-weight: 600;
+  
+  @include respond-to($breakpoint-mobile) {
+    @include mono-text(1.25rem);
+  }
+}
+
+.subtitle {
+  @include mono-text(0.75rem);
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.description {
+  margin-bottom: $spacing-xl;
+  
+  p {
+    @include mono-text(1rem);
+    color: $text-primary;
+    line-height: 1.7;
+    margin: 0;
+    
+    @include respond-to($breakpoint-mobile) {
+      @include mono-text(0.875rem);
+    }
+  }
+}
+
+.details {
+  margin-bottom: $spacing-xl;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-lg;
+  
+  @include respond-to($breakpoint-mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+  }
+}
+
+.detailItem {
+  background: $stone-grey-50;
+  border: 1px solid $stone-grey-100;
+  border-radius: 2px;
+  padding: $spacing-md;
+  
+  @include respond-to($breakpoint-mobile) {
+    padding: $spacing-sm;
+  }
+}
+
+.detailLabel {
+  @include mono-text(0.75rem);
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: $spacing-xs;
+  font-weight: 500;
+}
+
+.detailValue {
+  @include mono-text(0.875rem);
+  color: $text-primary;
+  line-height: 1.5;
+  margin: 0;
+  
+  @include respond-to($breakpoint-mobile) {
+    @include mono-text(0.8125rem);
+  }
+}
+
+.characteristics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-xl;
+  
+  @include respond-to($breakpoint-mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}
+
+.section {
+  // Base section styling
+}
+
+.sectionTitle {
+  @include mono-text(1rem);
+  color: $text-primary;
+  margin: 0 0 $spacing-md 0;
+  font-weight: 600;
+  
+  @include respond-to($breakpoint-mobile) {
+    @include mono-text(0.875rem);
+    margin-bottom: $spacing-sm;
+  }
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+.tag {
+  @include mono-text(0.75rem);
+  background: $stone-grey-100;
+  color: $text-primary;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: 2px;
+  border: 1px solid $stone-grey-200;
+  font-weight: 500;
+  
+  @include respond-to($breakpoint-mobile) {
+    @include mono-text(0.6875rem);
+    padding: $spacing-xs $spacing-xs;
+  }
+}
+
+.factorList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.factor {
+  @include mono-text(0.875rem);
+  color: $text-primary;
+  line-height: 1.6;
+  margin-bottom: $spacing-sm;
+  padding-left: $spacing-md;
+  position: relative;
+  
+  &::before {
+    content: '•';
+    color: $stone-grey-400;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+  }
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  @include respond-to($breakpoint-mobile) {
+    @include mono-text(0.8125rem);
+    padding-left: $spacing-sm;
+  }
+}
+
+// Compact variant for smaller spaces
+.regionInfo.compact {
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  
+  .title {
+    @include mono-text(1.25rem);
+  }
+  
+  .description {
+    margin-bottom: $spacing-lg;
+    
+    p {
+      @include mono-text(0.875rem);
+    }
+  }
+  
+  .detailGrid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: $spacing-md;
+  }
+  
+  .characteristics {
+    gap: $spacing-lg;
+  }
+  
+  @include respond-to($breakpoint-mobile) {
+    padding: $spacing-md;
+    
+    .title {
+      @include mono-text(1.125rem);
+    }
+    
+    .description p {
+      @include mono-text(0.8125rem);
+    }
+  }
+}

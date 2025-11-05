@@ -1,0 +1,27 @@
+// mixins.scss
+@import './variables.scss';
+
+@mixin respond-to($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin minimalist-card {
+  background: $stone-grey-50;
+  border: 1px solid $stone-grey-200;
+  border-radius: 2px; // Minimal border radius
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: $stone-grey-300;
+    box-shadow: 0 2px 8px rgba(33, 33, 33, 0.08);
+  }
+}
+
+@mixin mono-text($size: 0.875rem) {
+  font-family: $font-primary;
+  font-size: $size;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+}

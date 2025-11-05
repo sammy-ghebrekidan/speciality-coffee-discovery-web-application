@@ -1,0 +1,131 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.coffeeFilter {
+  width: 100%;
+  margin-bottom: $spacing-xl;
+}
+
+.tabNavigation {
+  margin-bottom: $spacing-lg;
+}
+
+.filterControls {
+  background: $stone-grey-50;
+  border: 1px solid $stone-grey-200;
+  padding: $spacing-lg;
+  border-radius: 2px;
+}
+
+.filterRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: $spacing-md;
+  margin-bottom: $spacing-md;
+  
+  @include respond-to($breakpoint-mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-sm;
+  }
+}
+
+.filterActions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: $spacing-sm;
+  border-top: 1px solid $stone-grey-200;
+}
+
+.clearButton {
+  @include mono-text(0.75rem);
+  background: none;
+  border: 1px solid $stone-grey-300;
+  color: $text-secondary;
+  padding: $spacing-xs $spacing-md;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  
+  &:hover {
+    background: $stone-grey-100;
+    border-color: $stone-grey-400;
+    color: $text-primary;
+  }
+}
+
+.activeFilters {
+  margin-top: $spacing-md;
+  padding: $spacing-md;
+  background: $stone-grey-100;
+  border-radius: 2px;
+}
+
+.activeFiltersLabel {
+  @include mono-text(0.75rem);
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: $spacing-sm;
+  font-weight: 500;
+}
+
+.filterTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+}
+
+.filterTag {
+  @include mono-text(0.75rem);
+  background: $stone-grey-200;
+  color: $text-primary;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: 1px;
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  text-transform: capitalize;
+}
+
+.removeTag {
+  background: none;
+  border: none;
+  color: $text-muted;
+  cursor: pointer;
+  padding: 0;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  @include mono-text(0.75rem);
+  
+  &:hover {
+    background: $stone-grey-300;
+    color: $text-primary;
+  }
+}
+
+// Responsive adjustments
+@include respond-to($breakpoint-mobile) {
+  .filterControls {
+    padding: $spacing-md;
+  }
+  
+  .activeFilters {
+    padding: $spacing-sm;
+  }
+  
+  .filterTags {
+    gap: $spacing-xs;
+  }
+  
+  .filterTag {
+    @include mono-text(0.625rem);
+    padding: 2px $spacing-xs;
+  }
+}

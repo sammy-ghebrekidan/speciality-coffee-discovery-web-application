@@ -1,0 +1,73 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $spacing-lg;
+  
+  @include respond-to($breakpoint-mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+  }
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-2xl;
+  gap: $spacing-lg;
+}
+
+.loadingText {
+  @include mono-text;
+  color: $text-secondary;
+  margin: 0;
+}
+
+.errorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-2xl;
+  background: $stone-grey-100;
+  border: 1px solid $stone-grey-200;
+  border-radius: 2px;
+}
+
+.errorText {
+  @include mono-text;
+  color: $text-secondary;
+  text-align: center;
+  margin: 0;
+}
+
+.emptyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-2xl;
+  text-align: center;
+}
+
+.emptyIcon {
+  color: $stone-grey-300;
+  margin-bottom: $spacing-lg;
+}
+
+.emptyTitle {
+  @include mono-text(1.25rem);
+  color: $text-primary;
+  font-weight: 500;
+  margin: 0 0 $spacing-sm 0;
+}
+
+.emptyText {
+  @include mono-text;
+  color: $text-secondary;
+  margin: 0;
+  max-width: 300px;
+}

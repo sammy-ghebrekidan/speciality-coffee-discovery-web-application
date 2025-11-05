@@ -1,0 +1,344 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-2xl;
+  gap: $spacing-lg;
+  
+  p {
+    @include mono-text;
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-2xl;
+  text-align: center;
+  
+  h1 {
+    @include mono-text(1.5rem);
+    color: $text-primary;
+    font-weight: 500;
+    margin: 0 0 $spacing-md 0;
+  }
+  
+  p {
+    @include mono-text;
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+
+.coffeeDetail {
+  padding: $spacing-xl 0;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-2xl;
+  margin-bottom: $spacing-2xl;
+  
+  @include respond-to($breakpoint-tablet) {
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+  }
+}
+
+.imageContainer {
+  background: $stone-grey-100;
+  border: 1px solid $stone-grey-200;
+  border-radius: 2px;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholderImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: $stone-grey-400;
+}
+
+.coffeeBeanIcon {
+  color: $stone-grey-600;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.name {
+  @include mono-text(2rem);
+  color: $text-primary;
+  font-weight: 500;
+  margin: 0;
+  
+  @include respond-to($breakpoint-mobile) {
+    font-size: 1.5rem;
+  }
+}
+
+.origin {
+  h3 {
+    @include mono-text(0.875rem);
+    color: $text-primary;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 $spacing-sm 0;
+  }
+  
+  p {
+    @include mono-text(0.875rem);
+    color: $text-secondary;
+    margin: 0 0 $spacing-xs 0;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.processing {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-sm 0;
+  border-bottom: 1px solid $stone-grey-200;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.label {
+  @include mono-text(0.75rem);
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.value {
+  @include mono-text(0.875rem);
+  color: $text-primary;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2xl;
+}
+
+.description {
+  h2 {
+    @include mono-text(1.25rem);
+    color: $text-primary;
+    font-weight: 500;
+    margin: 0 0 $spacing-md 0;
+  }
+  
+  p {
+    @include mono-text;
+    color: $text-secondary;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+.flavorProfile {
+  h2 {
+    @include mono-text(1.25rem);
+    color: $text-primary;
+    font-weight: 500;
+    margin: 0 0 $spacing-lg 0;
+  }
+}
+
+.flavorScales {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+}
+
+.scale {
+  display: grid;
+  grid-template-columns: 100px 1fr 60px;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.scaleLabel {
+  @include mono-text(0.75rem);
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.scaleBar {
+  height: 8px;
+  background: $stone-grey-200;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.scaleFill {
+  height: 100%;
+  background: $stone-grey-600;
+  transition: width 0.3s ease;
+}
+
+.scaleValue {
+  @include mono-text(0.75rem);
+  color: $text-primary;
+  text-align: right;
+}
+
+.flavorNotes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-xl;
+  
+  @include respond-to($breakpoint-mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}
+
+.noteGroup {
+  h4 {
+    @include mono-text(0.875rem);
+    color: $text-primary;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 $spacing-md 0;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+}
+
+.tag {
+  @include mono-text(0.75rem);
+  background: $stone-grey-100;
+  color: $text-muted;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: 1px;
+  text-transform: lowercase;
+}
+
+.brewingMethods {
+  h2 {
+    @include mono-text(1.25rem);
+    color: $text-primary;
+    font-weight: 500;
+    margin: 0 0 $spacing-lg 0;
+  }
+}
+
+.brewingMethod {
+  background: $stone-grey-50;
+  border: 1px solid $stone-grey-200;
+  border-radius: 2px;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  h3 {
+    @include mono-text(1.125rem);
+    color: $text-primary;
+    font-weight: 500;
+    margin: 0 0 $spacing-md 0;
+  }
+}
+
+.brewingSpecs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+}
+
+.spec {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.specLabel {
+  @include mono-text(0.75rem);
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.specValue {
+  @include mono-text(0.875rem);
+  color: $text-primary;
+  font-weight: 500;
+}
+
+.instructions {
+  h4 {
+    @include mono-text(0.875rem);
+    color: $text-primary;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 $spacing-md 0;
+  }
+  
+  ol {
+    @include mono-text(0.875rem);
+    color: $text-secondary;
+    line-height: 1.6;
+    padding-left: $spacing-lg;
+    margin: 0;
+    
+    li {
+      margin-bottom: $spacing-sm;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

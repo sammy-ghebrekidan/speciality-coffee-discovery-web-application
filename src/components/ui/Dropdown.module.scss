@@ -1,0 +1,169 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.dropdown {
+  position: relative;
+  min-width: 180px;
+}
+
+.label {
+  @include mono-text(0.75rem);
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: $spacing-xs;
+  font-weight: 500;
+}
+
+.trigger {
+  @include mono-text(0.875rem);
+  background: $stone-grey-50;
+  border: 1px solid $stone-grey-200;
+  padding: $spacing-sm $spacing-md;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-sm;
+  transition: all 0.2s ease;
+  min-height: 40px;
+  
+  &:hover {
+    border-color: $stone-grey-300;
+    background: $stone-grey-100;
+  }
+  
+  &.open {
+    border-color: $stone-grey-400;
+    background: $stone-grey-100;
+  }
+}
+
+.displayText {
+  flex: 1;
+  color: $text-primary;
+  text-align: left;
+  
+  .trigger:not(.open) &:empty::before {
+    content: attr(data-placeholder);
+    color: $text-muted;
+  }
+}
+
+.clearButton {
+  background: none;
+  border: none;
+  color: $text-muted;
+  cursor: pointer;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  @include mono-text(0.875rem);
+  
+  &:hover {
+    background: $stone-grey-200;
+    color: $text-primary;
+  }
+}
+
+.arrow {
+  color: $text-muted;
+  transition: transform 0.2s ease;
+  @include mono-text(0.75rem);
+  
+  &.up {
+    transform: rotate(180deg);
+  }
+  
+  &.down {
+    transform: rotate(0deg);
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: $stone-grey-50;
+  border: 1px solid $stone-grey-200;
+  border-top: none;
+  z-index: 100;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(33, 33, 33, 0.1);
+}
+
+.option {
+  @include mono-text(0.75rem);
+  padding: $spacing-sm $spacing-md;
+  cursor: pointer;
+  color: $text-secondary;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: $stone-grey-100;
+    color: $text-primary;
+  }
+  
+  &.selected {
+    background: $stone-grey-200;
+    color: $text-primary;
+    font-weight: 500;
+  }
+}
+
+.checkbox {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  accent-color: $stone-grey-800;
+}
+
+.optionLabel {
+  flex: 1;
+  text-align: left;
+}
+
+.count {
+  color: $text-muted;
+  @include mono-text(0.625rem);
+  font-weight: normal;
+}
+
+.noOptions {
+  @include mono-text(0.75rem);
+  padding: $spacing-md;
+  color: $text-muted;
+  text-align: center;
+  font-style: italic;
+}
+
+// Responsive adjustments
+@include respond-to($breakpoint-mobile) {
+  .dropdown {
+    min-width: 140px;
+  }
+  
+  .trigger {
+    padding: $spacing-xs $spacing-sm;
+    min-height: 36px;
+  }
+  
+  .label {
+    @include mono-text(0.625rem);
+  }
+  
+  .displayText {
+    @include mono-text(0.75rem);
+  }
+}
