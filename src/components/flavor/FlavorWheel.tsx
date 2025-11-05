@@ -167,16 +167,19 @@ export const FlavorWheel: React.FC<FlavorWheelProps> = ({
         segments.selectAll('path')
           .transition()
           .duration(300)
-          .attr('d', function(this: any, segmentData: any) {
-            return selectedFlavor?.id === segmentData.data.id ? hoverArc(segmentData) || '' : arc(segmentData) || '';
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          .attr('d', (d: any) => {
+            return selectedFlavor?.id === d.data.id ? hoverArc(d) || '' : arc(d) || '';
           })
-          .style('filter', function(this: any, segmentData: any) {
-            return selectedFlavor?.id === segmentData.data.id 
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          .style('filter', (d: any) => {
+            return selectedFlavor?.id === d.data.id 
               ? 'drop-shadow(0 8px 25px rgba(0,0,0,0.4)) brightness(1.3)' 
               : 'drop-shadow(0 3px 12px rgba(0,0,0,0.2))';
           })
-          .style('opacity', function(this: any, segmentData: any) {
-            return selectedFlavor?.id === segmentData.data.id ? 1 : 0.9;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          .style('opacity', (d: any) => {
+            return selectedFlavor?.id === d.data.id ? 1 : 0.9;
           });
       });
 

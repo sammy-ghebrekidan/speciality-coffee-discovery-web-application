@@ -1,5 +1,5 @@
 // mixins.scss
-@import './variables.scss';
+@use './variables' as *;
 
 @mixin respond-to($breakpoint) {
   @media (max-width: $breakpoint) {
